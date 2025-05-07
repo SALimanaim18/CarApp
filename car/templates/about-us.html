@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Profile Setting{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'assets/css/owl.transitions.css' %}" type="text/css">
+{% endblock %}
+
+{% block body %}
+
+<!--Page Header-->
+<section class="page-header aboutus_page">
+  <div class="container">
+    <div class="page-header_wrap">
+      <div class="page-heading">
+        <h1>About Us</h1>
+      </div>
+      <ul class="coustom-breadcrumb">
+        <li><a href="index.html">Acceuil</a></li><li>
+        <li>About Us</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Dark Overlay-->
+  <div class="dark-overlay"></div>
+</section>
+<!-- /Page Header--> 
+
+<!--About-us-->
+<section class="about_us section-padding">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2><span>Bienvenue to the</span>  EASY CAR </h2>
+      <p> Nous fournissons une plateforme pour publier des véhicules d'occasion. Recherchez et trouvez le véhicule de vos rêves.</p>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <div class="about_content row">
+          <div class="col-md-5 col-sm-4 col-xs-4">
+            <div class="about_img"> <img src="{% static 'assets/images/us.jpg' %}" alt="image"> </div>
+          </div>
+          <div class="col-md-7 col-sm-8 col-xs-8">
+            <h3>Qui Somme Nous</h3>
+            <p> Une plateforme qui connecte l'acheteur au vendeur. Une plateforme qui aide les gens à obtenir des véhicules d'occasion sans tracas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="about_content row">
+          <div class="col-md-5 col-sm-4 col-xs-4">
+            <div class="about_img"> <img src="{% static 'assets/images/chouaib2.jpg' %}" alt="image"> </div>
+          </div>
+          <div class="col-md-7 col-sm-8 col-xs-8">
+            <h3>Notre Mission</h3>
+            <p>Notre mission est de fournir des véhicules d'occasion à proximité en un seul endroit. Ainsi, l'acheteur potentiel n'a pas besoin de se déplacer entre les concessionnaires.</p>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+
+    </div>
+  </div>
+</section>
+<!-- /About-us--> 
+
+<!-- Why-Choose-Us
+<section class="why_choose_us section-padding gray-bg">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Why <span>Choose Us</span></h2>
+      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <div class="listing_box">
+          <h5><i class="fa fa-user-circle" aria-hidden="true"></i> Trusted By Thousands</h5>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        </div>
+        <div class="listing_box">
+          <h5><i class="fa fa-globe" aria-hidden="true"></i> Wide Range Of Vehicles</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        </div>
+        <div class="listing_box">
+          <h5><i class="fa fa-car" aria-hidden="true"></i> Faster Buy & Sell</h5>
+          <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="video_box">
+          <iframe class="mfp-iframe" src="https://www.youtube.com/embed/rqSoXtKMU3Q" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ /Why-Choose-Us--> 
+
+<!-- Fun-Facts-->
+<section class="fun-facts-section">
+  <div class="container div_zindex">
+    <div class="row">
+      <div class="col-md-3 col-sm-3 col-xs-6">
+        <div class="fun-facts-m">
+          <div class="cell">
+            <h2><i class="fa fa-calendar" aria-hidden="true"></i>14+</h2>
+            <p>Année en Travail</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-6">
+        <div class="fun-facts-m">
+          <div class="cell">
+            <h2><i class="fa fa-car" aria-hidden="true"></i>1000+</h2>
+            <p>Transaction de voitures conclue</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-6">
+        <div class="fun-facts-m">
+          <div class="cell">
+            <h2><i class="fa fa-car" aria-hidden="true"></i>1000+</h2>
+            <p>Occasion à vendre</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-6">
+        <div class="fun-facts-m">
+          <div class="cell">
+            <h2><i class="fa fa-user-circle-o" aria-hidden="true"></i>600+</h2>
+            <p>Clients satisfaits</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Dark Overlay-->
+  <!--<div class="dark-overlay"></div>-->
+</section>
+<!-- /Fun-Facts--> 
+
+<!-- Meet-the-Team-->
+<section class="meet_team section-padding">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Rencontrer L'Equipe</h2>
+      
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-4">
+        <div class="team_member">
+          <div class="team_img"> <img src="{% static 'assets/images/aya.jpg' %}" alt="image">
+            <div class="team_more_info">
+              <div class="info_wrap">
+                <p><span>Phone:</span> <a href="tel:+212-693 298 080">+212-693 298 080</a></p>
+                <p><span>Email:</span> <a href="mailto:messaoudiaya2002@gmail.com">messaoudiaya2002@gmail.com</a></p>
+                <ul>
+                  <li><a href="https://web.facebook.com/aya.messaoudi.9235/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="team_info">
+            <H6>Messaoudi Aya</H6>
+            <P>Développeuse web</P>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="team_member">
+          <div class="team_img"> <img src="{% static 'assets/images/chouaib.jpg' %}" alt="image">
+            <div class="team_more_info">
+              <div class="info_wrap">
+                <p><span>Phone:</span> <a href="tel:+212-669 372 352">+212-669 372 352</a></p>
+                <p><span>Email:</span> <a href="mailto:bouchaibnamir92@gmail.com">bouchaibnamir92@gmail.com</a></p>
+                <ul>
+                  <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="team_info">
+            <H6>Namir Bouchaib</H6>
+            <P>Développeur web</P>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="team_member">
+          <div class="team_img"> <img src="{% static 'assets/images/salima.jpg' %}" alt="image">
+            <div class="team_more_info">
+              <div class="info_wrap">
+                <p><span>Phone:</span> <a href="tel:+212-637 845 874">+212-637 845 874</a></p>
+                <p><span>Email:</span> <a href="mailto:salimanaim18@gmail.com">salimanaim18@gmail.com</a></p>
+                <ul>
+                  <li><a href="https://web.facebook.com/salima.naim.3/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li><a href="https://www.instagram.com/salima.nm/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                  <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="team_info">
+            <H6>Naim Salima</H6>
+            <P>Développeuse Web</P>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Meet-the-Team--> 
+
+
+{% endblock %}

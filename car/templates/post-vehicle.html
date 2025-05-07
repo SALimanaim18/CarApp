@@ -1,0 +1,397 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Sell My Car{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'assets/css/owl.transitions.css' %}" type="text/css">
+<style>
+.form-group.required .control-label:after { 
+    color: #d00;
+    content: "*";
+    position: absolute;
+    margin-left: 8px;
+    top:7px;
+}
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+
+
+<!--Page Header-->
+<section class="page-header profile_page">
+  <div class="container">
+    <div class="page-header_wrap">
+      <div class="page-heading">
+        <h1>Post a Vehicle</h1>
+      </div>
+      <ul class="coustom-breadcrumb">
+        <li><a href="index.html">Acceuil</a></li>
+        <li>Post a Vehicle</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Dark Overlay-->
+  <div class="dark-overlay"></div>
+</section>
+<!-- /Page Header--> 
+
+<!--Post-vehicle-->
+<section class="user_profile inner_pages">
+  <div class="container">
+  <!--
+    <div class="user_profile_info gray-bg padding_4x4_40">
+      <div class="upload_user_logo"> <img src="{% static 'assets/images/dealer-logo.jpg' %}" alt="image">
+        
+        <div class="upload_newlogo">
+          <input name="upload" type="file">
+        </div>
+        
+      </div>
+      <div class="dealer_info">
+        <h5>Post a Used Car </h5>
+        
+      </div>
+    </div>
+    -->
+    <div class="row">
+      <div class="col-md-3 col-sm-3">
+        <div class="profile_nav">
+          <ul>
+            <li><a href="profile-settings.html">Changer Mot de Passe</a></li>
+            <li><a href="my-vehicles.html">Mes Véhicules</a></li>
+            <li class="active"><a href="post-vehicle.html">Poster Véhicule</a></li>
+            <li><a href="/logout">Déconnecter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-8">
+        <div class="profile_wrap">
+          <h5 class="uppercase underline">Poster un nouveau Véhicule</h5>
+          <form action="/post-vehicle.html" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+            <div class="form-group required">
+              <label class="control-label">Nom Véhicule</label>
+              <input class="form-control white_bg" id="car_title" name="car_title" type="text" placeholder="ex. Suzuki Swift 2006 VXI Model" required>
+            </div>
+            <div class="form-group required">
+              <label class="control-label">Année</label>
+              <input class="form-control white_bg" id="make_year"  name="make_year" type="text" required onkeypress="return isNumber(event)" onpaste="return false;">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Mois</label>
+              <input class="form-control white_bg" id="make_month" name="make_month" type="text">
+            </div>
+            <div class="form-group required">
+              <label class="control-label">Vehicule Manufacturer</label>
+              <input class="form-control white_bg" id="car_manufacturer"  name="car_manufacturer" type="text" required placeholder="ex. suzuki, tata, mahindra">
+            </div>
+            <div class="form-group required">
+              <label class="control-label">Vehicule Model</label>
+              <input class="form-control white_bg" id="car_model" name="car_model" type="text" required>
+            </div>
+            <div class="form-group">
+              <label class="control-label"> Version Véhicule</label>
+              <input class="form-control white_bg" id="car_version" name="car_version" type="text">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Couleur du Véhicule</label>
+              <input class="form-control white_bg" id="car_color" name="car_color" type="text" >
+            </div>
+            <div class="form-group">
+              <label class="control-label">Sélectionnez le type de carburant</label>
+              <div class="select">
+                <select class="form-control white_bg" name="fuel_type">
+                  <option>Petrol</option>
+                  <option>Diesel</option>
+                  <option>LPG</option>
+                  <option>CNG</option>
+                  <option>Electric</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Sélectionnez le type de transmission</label>
+              <div class="select">
+                <select class="form-control white_bg" name="transmission_type">
+                  <option>Manual</option>
+                  <option>Automatic</option>
+
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Sélectionnez le propriétaire du véhicule</label>
+              <div class="select">
+                <select class="form-control white_bg" name="car_owner">
+                  <option>Premier propriétaire</option>
+                  <option>Deuxième propriétaire</option>
+                  <option>Troisième propriétaire</option>
+                  <option>Quatrième propriétaire ou plus</option>
+                  
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Kilometer Parcouru</label>
+              <input class="form-control white_bg" id="kilometer_driven" name="kilometer_driven" type="text" >
+            </div>
+            <div class="form-group required">
+              <label class="control-label">Prix ​​de vente prévu(DHS)</label>
+              <input class="form-control white_bg" id="expected_selling_price" name="expected_selling_price" type="text" required="required" onkeypress="return isNumber(event)" onpaste="return false;">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Registration Type</label>
+              <div class="select">
+                <select class="form-control white_bg" name="registration_type">
+                  <option>Individuelle</option>
+                  <option>Entreprise</option>
+                  <option>Taxi</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Type d'assurance</label>
+              <div class="select">
+                <select class="form-control white_bg" name="insurance_type">
+                  <option>Expiré</option>
+                  <option>Complète</option>
+                  <option>Tierce personne</option>
+                  
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Numéro d'enregistrement</label>
+              <input class="form-control white_bg" id="registration_number" name="registration_number" type="text" placeholder="RJ20 CD XXXX" >
+            </div>
+            <div class="form-group">
+              <label class="control-label">Description générale du véhicule</label>
+              <textarea class="form-control white_bg" name="car_description" rows="4" ></textarea>
+            </div>
+
+            <div class="form-group required">
+              <label for="file-upload" class="control-label">Télecharger</label>
+              <br>
+              <label for="file-upload" class="custom-file-upload"></label>
+              <div class="vehicle_images">
+                <div class="upload_more_img">
+                  <input id="file-upload" type="file" name="car_photo" accept="image/gif, image/jpeg, image/png" multiple class="form-control-file" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="form-group required">
+              <label class="control-label">Vehicule Type</label>
+              <div class="select" >
+                <select class="form-control white_bg" name="vehicle_type">
+                  
+                  <option>Voiture</option>
+                  <option>Vélo</option>
+                  <option>Camion</option>
+                  <option>Tracteur</option>
+                  <option>Auto Rikshaw</option>
+                  <option>Instrument Agricole</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Save Personal Details-->
+            <div class="gray-bg field-title">
+              <h6> Information Personnel</h6>
+            </div>
+            <label class="control-label"> Certaines de vos coordonnées sont fournies aux acheteurs intéressés afin qu'ils puissent se connecter avec vous</label>
+            <div class="form-group required">
+              <label class="control-label">Nom Complet</label>
+              <input class="form-control white_bg" id="facebook" name="car_owner_name" type="text" required>
+            </div>
+            <div class="form-group required">
+              <label class="control-label">Ville</label>
+              
+              <div class="select" >
+                <select class="form-control white_bg" name="car_city">
+                  
+                  <option>Casablanca</option>
+                  <option>Rabat</option>
+                  <option>Fès</option>
+                  <option>Tanger</option>
+                  <option>Marrakech</option>
+                  <option>Agadir</option>
+                  <option>Oujda</option>
+                  <option>Kénitra</option>
+                  <option>Témara</option>
+                  <option>Meknès</option>
+                  <option>Safi</option>
+                  <option>Salé</option>
+                  <option>El Jadida</option>
+                  <option>Nador</option>
+                  <option>Beni Mellal</option>
+                  <option>Tétouan</option>
+                  <option>Khémisset</option>
+                  <option>Taza</option>
+                  <option>Essaouira</option>
+                  <option>El Kelâa des Sraghna</option>
+                  <option>Ouarzazate</option>
+                  <option>Settat</option>
+                  <option>Tiznit</option>
+                  <option>Inezgane</option>
+                  <option>Laâyoune</option>
+                  <option>Khouribga</option>
+                  <option>Skhirat</option>
+                  <option>Tifelt</option>
+                  <option>Taourirt</option>
+                  <option>Béni Ansar</option>
+                  <option>Sefrou</option>
+                  <option>Larache</option>
+                  <option>Guelmim</option>
+                  <option>Tinghir</option>
+                  <option>Berkane</option>
+                  <option>Ksar El Kébir</option>
+                  <option>Taza</option>
+                  <option>Al Hoceïma</option>
+                  <option>Bouznika</option>
+                  <option>Errachidia</option>
+                  <option>Jerada</option>
+                  <option>Kénitra</option>
+                  <option>Martil</option>
+                  <option>Ribat El Kheir</option>
+                  <option>Khémisset</option>
+                  <option>Khouribga</option>
+                  <option>Tifelt</option>
+                  <option>El Hajeb</option>
+                  <option>Tan-Tan</option>
+                  <option>Midelt</option>
+                  <option>Skhirate</option>
+                  <option>Asilah</option>
+                  <option>Oulad Teïma</option>
+                  <option>Sidi Bennour</option>
+                  <option>Amalou Ighriben</option>
+                  <option>Taounate</option>
+                  <option>Imzouren</option>
+                  <option>Fnideq</option>
+                  <option>Sebt El Maârif</option>
+                  <option>Biougra</option>
+                  <option>Imintanoute</option>
+                  <option>Taghazout</option>
+                  <option>Aït Melloul</option>
+                  <option>Dakhla</option>
+                  <option>Sidi Yahya El Gharb</option>
+                  <option>Oued Zem</option>
+                  <option>Boujniba</option>
+                  <option>Agdz</option>
+                  <option>Mirleft</option>
+                  <option>Afourar</option>
+                  <option>Ben Ahmed</option>
+                  <option>Aït Youssef Ou Ali</option>
+                  <option>Arbaoua</option>
+                  <option>Driouch</option>
+                  <option>Alnif</option>
+                  <option>Drargua</option>
+                  <option>Tabia</option>
+                  <option>Khénifra</option>
+                  <option>Béni Chiker</option>
+                  <option>Bhalil</option>
+                  <option>Sidi Ifni</option>
+                  <option>Imouzzer Kandar</option>
+                  <option>Boujdour</option>
+                  <option>Guercif</option>
+                  <option>Ouezzane</option>
+                  <option>Agdz</option>
+                  <option>Aknoul</option>
+                  <option>Anoual</option>
+                  <option>Béni Malek</option>
+                  <option>Bhalil</option>
+                  <option>Bouarfa</option>
+                  <option>Boulemane</option>
+                  <option>Chichaoua</option>
+                  <option>Dakhla</option>
+                  <option>Douar Tindja</option>
+                  <option>El Aioun Sidi Mellouk</option>
+                  <option>El Aïoun</option>
+                  <option>El Borouj</option>
+                  <option>El Hanchane</option>
+                  <option>El Menzel</option>
+                  <option>El Hajeb</option>
+                  <option>El Ksiba</option>
+                  <option>Errachidia</option>
+                  <option>Es-Semara</option>
+                  <option>Fnideq</option>
+                  <option>Guercif</option>
+                  <option>Had Kourt</option>
+                  <option>Hrara</option>
+                  <option>Imilchil</option>
+                  <option>Imouzzer des Ida Ou Tanane</option>
+                  <option>Imzouren</option>
+                  <option>Inezgane-Aït Melloul</option>
+                  <option>Jorf</option>
+                  <option>Kariat Arekmane</option>
+                  <option>Kasba Tadla</option>
+                  <option>Kattara</option>
+                  <option>Khémisset</option>
+                  <option>Khénifra</option>
+                  <option>Khouribga</option>
+                  <option>Krifla</option>
+                  <option>Laattaouia</option>
+                  <option>Lakhsas</option>
+                  <option>Maaziz</option>
+                  <option>Massa</option>
+                  <option>M'diq</option>
+                  <option>M'hamid El Ghizlane</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Numéro Teléphone</label>
+              <input class="form-control white_bg" id="linkedin" name="car_owner_phone_number" type="text" onkeypress="return isNumber(event)"> 
+            </div>
+            <div class="form-group">
+              <label class="control-label" style="color:red;">"*"</label>
+              <label class="control-label"> Champs Obligatoire</label>
+              <br>
+              <div class="form-group">
+                  
+                  <label for="terms_agree">En soumettant les détails du véhicule, vous avez également accepté le <a href="/privacy.html">Privacy and Policy Agreement</a></label>
+                </div>
+              
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn">Enregistrer <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/Post-vehicle--> 
+
+{% block scripts %}
+{% comment %} <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> {% endcomment %}
+
+
+    <script type="text/javascript">     
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if ( (charCode > 31 && charCode < 48) || charCode > 57) {
+            return false;
+        }
+        return true;
+      }
+    </script>
+
+
+    <script type="application/javascript">
+    $('input[type="file"]').change(function(e){
+        var fileName = e.target.files[0].name;
+        $('.custom-file-upload').html(fileName);
+    });
+</script>
+
+{% endblock %}
+
+
+{% endblock %}

@@ -1,0 +1,499 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load humanize %} 
+{% block title %}Cars{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'assets/css/owl.transitions.css' %}" type="text/css">
+{% endblock %}
+
+{% block body %}
+
+
+<!--Page Header-->
+<section class="page-header listing_page">
+  <div class="container">
+    <div class="page-header_wrap">
+      <div class="page-heading">
+        <h1>Liste de Voiture</h1>
+      </div>
+      <ul class="coustom-breadcrumb">
+        <li><a href="/">Acceuil</a></li>
+        <li>Liste de Voiture</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Dark Overlay-->
+  <div class="dark-overlay"></div>
+</section>
+<!-- /Page Header--> 
+
+<!--Listing-->
+<section class="listing-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-md-push-3">
+	  <div class="mobile_search">
+		 <div class="sidebar_widget">
+          <div class="widget_heading">
+            <h5><i class="fa fa-filter" aria-hidden="true"></i> Trouvez la voiture de vos rêves </h5>
+          </div>
+          <div class="sidebar_filter">
+            <form action="/search" method="get">
+              <div class="form-group select">
+                <select class="form-control" name="city">
+                  <option>Select Location</option>
+                  <option>Casablanca</option>
+                  <option>Rabat</option>
+                  <option>Fès</option>
+                  <option>Tanger</option>
+                  <option>Marrakech</option>
+                  <option>Agadir</option>
+                  <option>Oujda</option>
+                  <option>Kénitra</option>
+                  <option>Témara</option>
+                  <option>Meknès</option>
+                  <option>Safi</option>
+                  <option>Salé</option>
+                  <option>El Jadida</option>
+                  <option>Nador</option>
+                  <option>Beni Mellal</option>
+                  <option>Tétouan</option>
+                  <option>Khémisset</option>
+                  <option>Taza</option>
+                  <option>Essaouira</option>
+                  <option>El Kelâa des Sraghna</option>
+                  <option>Ouarzazate</option>
+                  <option>Settat</option>
+                  <option>Tiznit</option>
+                  <option>Inezgane</option>
+                  <option>Laâyoune</option>
+                  <option>Khouribga</option>
+                  <option>Skhirat</option>
+                  <option>Tifelt</option>
+                  <option>Taourirt</option>
+                  <option>Béni Ansar</option>
+                  <option>Sefrou</option>
+                  <option>Larache</option>
+                  <option>Guelmim</option>
+                  <option>Tinghir</option>
+                  <option>Berkane</option>
+                  <option>Ksar El Kébir</option>
+                  <option>Taza</option>
+                  <option>Al Hoceïma</option>
+                  <option>Bouznika</option>
+                  <option>Errachidia</option>
+                  <option>Jerada</option>
+                  <option>Kénitra</option>
+                  <option>Martil</option>
+                  <option>Ribat El Kheir</option>
+                  <option>Khémisset</option>
+                  <option>Khouribga</option>
+                  <option>Tifelt</option>
+                  <option>El Hajeb</option>
+                  <option>Tan-Tan</option>
+                  <option>Midelt</option>
+                  <option>Skhirate</option>
+                  <option>Asilah</option>
+                  <option>Oulad Teïma</option>
+                  <option>Sidi Bennour</option>
+                  <option>Amalou Ighriben</option>
+                  <option>Taounate</option>
+                  <option>Imzouren</option>
+                  <option>Fnideq</option>
+                  <option>Sebt El Maârif</option>
+                  <option>Biougra</option>
+                  <option>Imintanoute</option>
+                  <option>Taghazout</option>
+                  <option>Aït Melloul</option>
+                  <option>Dakhla</option>
+                  <option>Sidi Yahya El Gharb</option>
+                  <option>Oued Zem</option>
+                  <option>Boujniba</option>
+                  <option>Agdz</option>
+                  <option>Mirleft</option>
+                  <option>Afourar</option>
+                  <option>Ben Ahmed</option>
+                  <option>Aït Youssef Ou Ali</option>
+                  <option>Arbaoua</option>
+                  <option>Driouch</option>
+                  <option>Alnif</option>
+                  <option>Drargua</option>
+                  <option>Tabia</option>
+                  <option>Khénifra</option>
+                  <option>Béni Chiker</option>
+                  <option>Bhalil</option>
+                  <option>Sidi Ifni</option>
+                  <option>Imouzzer Kandar</option>
+                  <option>Boujdour</option>
+                  <option>Guercif</option>
+                  <option>Ouezzane</option>
+                  <option>Agdz</option>
+                  <option>Aknoul</option>
+                  <option>Anoual</option>
+                  <option>Béni Malek</option>
+                  <option>Bhalil</option>
+                  <option>Bouarfa</option>
+                  <option>Boulemane</option>
+                  <option>Chichaoua</option>
+                  <option>Dakhla</option>
+                  <option>Douar Tindja</option>
+                  <option>El Aioun Sidi Mellouk</option>
+                  <option>El Aïoun</option>
+                  <option>El Borouj</option>
+                  <option>El Hanchane</option>
+                  <option>El Menzel</option>
+                  <option>El Hajeb</option>
+                  <option>El Ksiba</option>
+                  <option>Errachidia</option>
+                  <option>Es-Semara</option>
+                  <option>Fnideq</option>
+                  <option>Guercif</option>
+                  <option>Had Kourt</option>
+                  <option>Hrara</option>
+                  <option>Imilchil</option>
+                  <option>Imouzzer des Ida Ou Tanane</option>
+                  <option>Imzouren</option>
+                  <option>Inezgane-Aït Melloul</option>
+                  <option>Jorf</option>
+                  <option>Kariat Arekmane</option>
+                  <option>Kasba Tadla</option>
+                  <option>Kattara</option>
+                  <option>Khémisset</option>
+                  <option>Khénifra</option>
+                  <option>Khouribga</option>
+                  <option>Krifla</option>
+                  <option>Laattaouia</option>
+                  <option>Lakhsas</option>
+                  <option>Maaziz</option>
+                  <option>Massa</option>
+                  <option>M'diq</option>
+                  <option>M'hamid El Ghizlane</option>
+
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="form-group select">
+                <select class="form-control" name="vehicle_type">
+                  <option>Select Vehicle Type</option>
+                  <option>Car</option>
+                  <option>Bike</option>
+                  <option>Truck</option>
+                  <option>Tractor</option>
+                  <option>Auto Rikshaw</option>
+                  <option>Agriculture Instrument</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                  <label class="form-label">Echelle Prix (DHS)</label>
+                  <input id="price_range1" name= "slider" data-slider-id='ex1Slider' type="text" class="span2" value="" data-slider-min="0" data-slider-max="2000000" data-slider-step="100000" data-slider-value="[100000,1200000]" tooltip="always"/>
+                  
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-block"><i class="fa fa-search" aria-hidden="true"></i> Chercher Voiture</button>
+              </div>
+            </form>
+          </div>
+        </div>
+	   </div>
+        <div class="result-sorting-wrapper">
+          <div class="sorting-count">
+            <p>1 - 8 <span>of {{total_vehicles}} Vehicles</span></p>
+          </div>
+          
+          <div class="result-sorting-by">
+            
+              <p>Trier par:</p>
+            <form action="/sort.html" method="get">
+              <div class="form-group select sorting-select">
+                
+                <select class="form-control" name="sort" onchange="this.form.submit()">
+                
+                  <option>Price(low to high)</option>
+                  <option>Price(high to low)</option>
+                
+                </select>
+                
+              </div>
+            </form>
+            
+          </div>
+        </div>
+        
+
+        {% for car in allcars%}
+        {% if forloop.counter < 9 %}  
+        <div class="product-listing-m gray-bg">
+          <div class="product-listing-img"> <a href="/listing-detail.html/{{car.id}}/"><img src="{{car.car_photo.url}}" class="img-fluid" alt="Image" /> </a>
+            
+            
+          </div>
+          <div class="product-listing-content">
+            <h5><a href="/listing-detail.html/{{car.id}}">{{car.car_title|title}}</a></h5>
+            <p class="list-price">DHS {{car.expected_selling_price | intcomma }}</p>
+            <ul>
+              <li><i class="fa fa-road" aria-hidden="true"></i>{{car.kilometer_driven  | intcomma }} km</li>
+              <li><i class="fa fa-paint-brush" aria-hidden="true"></i>{{car.car_color|title}}</li>
+              <li><i class="fa fa-location-arrow" aria-hidden="true"></i> {{car.car_city|title}}</li>
+              <li><i class="fa fa-calendar" aria-hidden="true"></i>{{car.make_year}} model</li>
+              <li><i class="fa fa-shower" aria-hidden="true"></i>{{car.fuel_type|title}}</li>
+              <li><i class="fa fa-car" aria-hidden="true"></i>{{car.car_manufacturer|title}} {{car.car_model|title}}</li>
+            </ul>
+            <a href="/listing-detail.html/{{car.id}}/" class="btn">Obtenir les Détails du Vendeur <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+            
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+
+        <div class="pagination">
+          <ul>
+          {% for num in allcars.paginator.page_range %}
+          {% ifequal num allcars.number %}
+          
+          <li class="current">{{ num }}</li>
+          {% else %}
+          <li><a href="?page={{ num }}">{{ num }}</a></li>
+          {% endifequal %} 
+          {% endfor %}
+
+          </ul>
+          
+        </div>
+      </div>
+      
+      <!--Side-Bar-->
+      <aside class="col-md-3 col-md-pull-9">
+        <div class="sidebar_widget sidebar_search_wrap">
+          <div class="widget_heading">
+            <h5><i class="fa fa-filter" aria-hidden="true"></i> Trouvez la voiture de vos rêves</h5>
+          </div>
+          <div class="sidebar_filter">
+            <form action="/search" method="get">
+              <div class="form-group select">
+                <select class="form-control" name="city">
+                  <option>Select Location</option>
+                  <option>Casablanca</option>
+                  <option>Rabat</option>
+                  <option>Fès</option>
+                  <option>Tanger</option>
+                  <option>Marrakech</option>
+                  <option>Agadir</option>
+                  <option>Oujda</option>
+                  <option>Kénitra</option>
+                  <option>Témara</option>
+                  <option>Meknès</option>
+                  <option>Safi</option>
+                  <option>Salé</option>
+                  <option>El Jadida</option>
+                  <option>Nador</option>
+                  <option>Beni Mellal</option>
+                  <option>Tétouan</option>
+                  <option>Khémisset</option>
+                  <option>Taza</option>
+                  <option>Essaouira</option>
+                  <option>El Kelâa des Sraghna</option>
+                  <option>Ouarzazate</option>
+                  <option>Settat</option>
+                  <option>Tiznit</option>
+                  <option>Inezgane</option>
+                  <option>Laâyoune</option>
+                  <option>Khouribga</option>
+                  <option>Skhirat</option>
+                  <option>Tifelt</option>
+                  <option>Taourirt</option>
+                  <option>Béni Ansar</option>
+                  <option>Sefrou</option>
+                  <option>Larache</option>
+                  <option>Guelmim</option>
+                  <option>Tinghir</option>
+                  <option>Berkane</option>
+                  <option>Ksar El Kébir</option>
+                  <option>Taza</option>
+                  <option>Al Hoceïma</option>
+                  <option>Bouznika</option>
+                  <option>Errachidia</option>
+                  <option>Jerada</option>
+                  <option>Kénitra</option>
+                  <option>Martil</option>
+                  <option>Ribat El Kheir</option>
+                  <option>Khémisset</option>
+                  <option>Khouribga</option>
+                  <option>Tifelt</option>
+                  <option>El Hajeb</option>
+                  <option>Tan-Tan</option>
+                  <option>Midelt</option>
+                  <option>Skhirate</option>
+                  <option>Asilah</option>
+                  <option>Oulad Teïma</option>
+                  <option>Sidi Bennour</option>
+                  <option>Amalou Ighriben</option>
+                  <option>Taounate</option>
+                  <option>Imzouren</option>
+                  <option>Fnideq</option>
+                  <option>Sebt El Maârif</option>
+                  <option>Biougra</option>
+                  <option>Imintanoute</option>
+                  <option>Taghazout</option>
+                  <option>Aït Melloul</option>
+                  <option>Dakhla</option>
+                  <option>Sidi Yahya El Gharb</option>
+                  <option>Oued Zem</option>
+                  <option>Boujniba</option>
+                  <option>Agdz</option>
+                  <option>Mirleft</option>
+                  <option>Afourar</option>
+                  <option>Ben Ahmed</option>
+                  <option>Aït Youssef Ou Ali</option>
+                  <option>Arbaoua</option>
+                  <option>Driouch</option>
+                  <option>Alnif</option>
+                  <option>Drargua</option>
+                  <option>Tabia</option>
+                  <option>Khénifra</option>
+                  <option>Béni Chiker</option>
+                  <option>Bhalil</option>
+                  <option>Sidi Ifni</option>
+                  <option>Imouzzer Kandar</option>
+                  <option>Boujdour</option>
+                  <option>Guercif</option>
+                  <option>Ouezzane</option>
+                  <option>Agdz</option>
+                  <option>Aknoul</option>
+                  <option>Anoual</option>
+                  <option>Béni Malek</option>
+                  <option>Bhalil</option>
+                  <option>Bouarfa</option>
+                  <option>Boulemane</option>
+                  <option>Chichaoua</option>
+                  <option>Dakhla</option>
+                  <option>Douar Tindja</option>
+                  <option>El Aioun Sidi Mellouk</option>
+                  <option>El Aïoun</option>
+                  <option>El Borouj</option>
+                  <option>El Hanchane</option>
+                  <option>El Menzel</option>
+                  <option>El Hajeb</option>
+                  <option>El Ksiba</option>
+                  <option>Errachidia</option>
+                  <option>Es-Semara</option>
+                  <option>Fnideq</option>
+                  <option>Guercif</option>
+                  <option>Had Kourt</option>
+                  <option>Hrara</option>
+                  <option>Imilchil</option>
+                  <option>Imouzzer des Ida Ou Tanane</option>
+                  <option>Imzouren</option>
+                  <option>Inezgane-Aït Melloul</option>
+                  <option>Jorf</option>
+                  <option>Kariat Arekmane</option>
+                  <option>Kasba Tadla</option>
+                  <option>Kattara</option>
+                  <option>Khémisset</option>
+                  <option>Khénifra</option>
+                  <option>Khouribga</option>
+                  <option>Krifla</option>
+                  <option>Laattaouia</option>
+                  <option>Lakhsas</option>
+                  <option>Maaziz</option>
+                  <option>Massa</option>
+                  <option>M'diq</option>
+                  <option>M'hamid El Ghizlane</option>
+
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="form-group select">
+                <select class="form-control" name="vehicle_type">
+                  <option>Select Vehicle Type</option>
+                  <option>Car</option>
+                  <option>Bike</option>
+                  <option>Truck</option>
+                  <option>Tractor</option>
+                  <option>Auto Rikshaw</option>
+                  <option>Agriculture Instrument</option>
+                </select>
+              </div>
+
+
+              
+              <div class="form-group">
+                  <label class="form-label">Echelle Prix (DHS)</label>
+                  <input id="price_range" name= "slider" data-slider-id='ex1Slider' type="text" class="span2" value="" data-slider-min="0" data-slider-max="2000000" data-slider-step="100000" data-slider-value="[100000,1200000]" tooltip="always"/>
+                  <p>Range: <span id="message"></span></p>
+                  
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-block"><i class="fa fa-search" aria-hidden="true"></i> Chercher Voiture</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+        <!-- <div class="sidebar_widget">
+          <div class="adimage">
+           <a href="{{ad.ad1_url}}">
+          <img id="avatar" src="{{ad.ad1.url}}" alt="Image not found" >
+          </a>
+          </div> -->
+         
+        </div>
+        <div class="sidebar_widget">
+          <div class="widget_heading">
+            <h5><i class="fa fa-car" aria-hidden="true"></i> Recently Listed Cars</h5>
+          </div>
+          <div class="recent_addedcars">
+            <ul>
+            {% for car in allcars reversed%}
+            {% if forloop.counter < 6 %}
+              <li class="gray-bg">
+                <div class="recent_post_img"> <a href="/listing-detail.html/{{car.id}}"><img src="{{car.car_photo.url}}" alt="image"></a> </div>
+                <div class="recent_post_title"> <a href="/listing-detail.html/{{car.id}}">{{car.car_title|title}}</a>
+                  <p class="widget_price">DHS {{car.expected_selling_price | intcomma }}</p>
+                </div>
+                
+              </li>
+              
+              {% endif %} 
+              {% endfor %}
+              
+            </ul>
+          </div>
+        </div>
+      </aside>
+      <!--/Side-Bar--> 
+    </div>
+  </div>
+</section>
+<!-- /Listing--> 
+
+{% block scripts %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+function submitform()
+{
+  document.sort.submit();
+}
+</script>
+
+<script>
+$( document ).ready(function() {
+    $('#price_range').change(function(){
+        $('#message').html('DHS '+$('#price_range').val());
+    });
+});
+</script>
+
+
+
+{% endblock %}
+
+
+{% endblock %}

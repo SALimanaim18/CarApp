@@ -1,0 +1,363 @@
+{% extends 'base.html' %}
+{% load humanize %} 
+{% load static %}
+
+{% block title %}Acceuil{% endblock %}
+
+
+{% block body %}
+
+<!-- Intro -->
+<section id="intro-3">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				
+					<div class="sidebar_widget sidebar_3">
+
+    
+						<div class="widget_heading">
+
+						  <h5><i class="fa fa-filter" aria-hidden="true"></i>Trouvez la voiture de vos rêves</h5>
+
+						</div>
+
+    
+					<div class="sidebar_filter">
+
+					<form action="/search" method="get">
+					<div class="row">
+        <div class="form-group col-md-6">
+          <div class="select">
+            <select class="form-control" name="city">
+				<option>Selectionnez Localisation</option>
+				<option>Casablanca</option>
+				<option>Rabat</option>
+				<option>Fès</option>
+				<option>Tanger</option>
+				<option>Marrakech</option>
+				<option>Agadir</option>
+				<option>Oujda</option>
+				<option>Kénitra</option>
+				<option>Témara</option>
+				<option>Meknès</option>
+				<option>Safi</option>
+				<option>Salé</option>
+				<option>El Jadida</option>
+				<option>Nador</option>
+				<option>Beni Mellal</option>
+				<option>Tétouan</option>
+				<option>Khémisset</option>
+				<option>Taza</option>
+				<option>Essaouira</option>
+				<option>El Kelâa des Sraghna</option>
+				<option>Ouarzazate</option>
+				<option>Settat</option>
+				<option>Tiznit</option>
+				<option>Inezgane</option>
+				<option>Laâyoune</option>
+				<option>Khouribga</option>
+				<option>Skhirat</option>
+				<option>Tifelt</option>
+				<option>Taourirt</option>
+				<option>Béni Ansar</option>
+				<option>Sefrou</option>
+				<option>Larache</option>
+				<option>Guelmim</option>
+				<option>Tinghir</option>
+				<option>Berkane</option>
+				<option>Ksar El Kébir</option>
+				<option>Taza</option>
+				<option>Al Hoceïma</option>
+				<option>Bouznika</option>
+				<option>Errachidia</option>
+				<option>Jerada</option>
+				<option>Kénitra</option>
+				<option>Martil</option>
+				<option>Ribat El Kheir</option>
+				<option>Khémisset</option>
+				<option>Khouribga</option>
+				<option>Tifelt</option>
+				<option>El Hajeb</option>
+				<option>Tan-Tan</option>
+				<option>Midelt</option>
+				<option>Skhirate</option>
+				<option>Asilah</option>
+				<option>Oulad Teïma</option>
+				<option>Sidi Bennour</option>
+				<option>Amalou Ighriben</option>
+				<option>Taounate</option>
+				<option>Imzouren</option>
+				<option>Fnideq</option>
+				<option>Sebt El Maârif</option>
+				<option>Biougra</option>
+				<option>Imintanoute</option>
+				<option>Taghazout</option>
+				<option>Aït Melloul</option>
+				<option>Dakhla</option>
+				<option>Sidi Yahya El Gharb</option>
+				<option>Oued Zem</option>
+				<option>Boujniba</option>
+				<option>Agdz</option>
+				<option>Mirleft</option>
+				<option>Afourar</option>
+				<option>Ben Ahmed</option>
+				<option>Aït Youssef Ou Ali</option>
+				<option>Arbaoua</option>
+				<option>Driouch</option>
+				<option>Alnif</option>
+				<option>Drargua</option>
+				<option>Tabia</option>
+				<option>Khénifra</option>
+				<option>Béni Chiker</option>
+				<option>Bhalil</option>
+				<option>Sidi Ifni</option>
+				<option>Imouzzer Kandar</option>
+				<option>Boujdour</option>
+				<option>Guercif</option>
+				<option>Ouezzane</option>
+				<option>Agdz</option>
+				<option>Aknoul</option>
+				<option>Anoual</option>
+				<option>Béni Malek</option>
+				<option>Bhalil</option>
+				<option>Bouarfa</option>
+				<option>Boulemane</option>
+				<option>Chichaoua</option>
+				<option>Dakhla</option>
+				<option>Douar Tindja</option>
+				<option>El Aioun Sidi Mellouk</option>
+				<option>El Aïoun</option>
+				<option>El Borouj</option>
+				<option>El Hanchane</option>
+				<option>El Menzel</option>
+				<option>El Hajeb</option>
+				<option>El Ksiba</option>
+				<option>Errachidia</option>
+				<option>Es-Semara</option>
+				<option>Fnideq</option>
+				<option>Guercif</option>
+				<option>Had Kourt</option>
+				<option>Hrara</option>
+				<option>Imilchil</option>
+				<option>Imouzzer des Ida Ou Tanane</option>
+				<option>Imzouren</option>
+				<option>Inezgane-Aït Melloul</option>
+				<option>Jorf</option>
+				<option>Kariat Arekmane</option>
+				<option>Kasba Tadla</option>
+				<option>Kattara</option>
+				<option>Khémisset</option>
+				<option>Khénifra</option>
+				<option>Khouribga</option>
+				<option>Krifla</option>
+				<option>Laattaouia</option>
+				<option>Lakhsas</option>
+				<option>Maaziz</option>
+				<option>Massa</option>
+				<option>M'diq</option>
+				<option>M'hamid El Ghizlane</option>
+
+				<option>Autre</option>
+                </select>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <div class="select">
+            <select class="form-control" name="vehicle_type">
+                  <option>Select Vehicle Type</option>
+                  <option>voiture</option>
+                  <option>vélo</option>
+                  <option>camion</option>
+                  <option>tracteur</option>
+                  <option>Auto Rikshaw</option>
+                  <option>Instrument agricole</option>
+                </select>
+          </div>
+        </div>
+
+
+        <div class="form-group col-md-12">
+          <label class="form-label">Echelle Prix (DHS)</label>
+                  <input id="price_range" name= "slider" data-slider-id='ex1Slider' type="text" class="span2" value="" data-slider-min="0" data-slider-max="2000000" data-slider-step="100000" data-slider-value="[100000,1200000]" tooltip="always"/>
+                  <p>Range: <span id="message"></span></p>
+        </div>
+        
+        <div class="form-group col-md-12">
+          <button type="submit" class="btn btn-block"><i class="fa fa-search" aria-hidden="true"></i> Chercher Voiture </button>
+        </div>
+		</div>
+      </form>
+
+
+					</div>
+
+				  </div>
+				
+				
+			</div>
+			<div class="col-md-7">
+				<div class="intro-img-wp">
+					<img src="{% static 'assets/images/car-img-01.png' %}" alt="image">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /Intro -->
+
+<!-- How-it-work -->
+<section id="how-work" class="section-padding">
+	<div class="container">
+		<div class="section-header heading-3 text-center">
+			<h2>Comment ça marche</h2>
+			<p>Vous aide à trouver la voiture parfaite.</p>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-sm-6">
+				<div class="work-steps">
+					<div class="icon-wrap">
+						<img src="{% static 'assets/images/icon-80x80.png' %}" alt="icon">
+					</div>
+					<h5>Rechercher dans notre inventaire</h5>
+					<p>Vous pouvez rechercher le véhicule de votre choix dans notre base de données en utilisant la fonctionnalité de recherche.</p>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="work-steps">
+					<div class="icon-wrap">
+						<img src="{% static 'assets/images/icon-80x80-2.png' %}" alt="icon">
+					</div>
+					<h5>Choisissez la voiture que vous aimez</h5>
+					<p>Choisissez la voiture avec vos préférences telles que la couleur, l'année de marque et le kilométrage parcouru. </p>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="work-steps">
+					<div class="icon-wrap">
+						<img src="{% static 'assets/images/icon-80x80-3.png' %}" alt="icon">
+					</div>
+					<h5>Meilleur investissement</h5>
+					<p>Une voiture d'occasion est parfois un meilleur investissement qu'une voiture neuve. Cela vous évite des responsabilités supplémentaires.</p>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="work-steps">
+					<div class="icon-wrap">
+						<img src="{% static 'assets/images/icon-80x80-4.png' %}" alt="icon">
+					</div>
+					<h5>Obtenez un essai routier</h5>
+					<p> N'oubliez pas de faire l'essai routier d'un véhicule avant de finaliser la transaction. Il vous aide à fournir un véritable feedback du véhicule.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /How-it-work -->
+
+<!-- Why-Choose-Us -->
+<section id="why-choose">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="image-rightside">
+					<img src="{% static 'assets/images/car-img-02.png' %}" alt="image">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<h2>Pourquoi choisir Biharimotors.com ?</h2>
+				<p>Comment obtenir les détails du véhicule et du propriétaire ?</p>
+				
+				<ul>
+					<li><i class="fa fa-check-circle"></i> Recherchez le véhicule souhaité</li>
+<li><i class="fa fa-check-circle"></i> Sélectionnez votre véhicule</li>
+<li><i class="fa fa-check-circle"></i> Obtenez tous les détails</li>
+<li><i class="fa fa-check-circle"></i> Vérifiez votre numéro de téléphone</li>
+<li><i class="fa fa-check-circle"></i> Obtenez les coordonnées du propriétaire de la voiture</li>
+
+				</ul>
+				<a href="/listing-classic.html" class="btn">Aller aux voitures d'occasion</a>
+
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /Why-Choose-Us -->
+
+<!-- Featured-LIsting -->
+<section id="featured-listings" class="section-padding">
+	<div class="container">
+		<div class="section-header heading-3 text-center">
+			<h2>Notre liste de véhicules</h2>
+<p>Liste de quelques véhicules d'occasion</p>
+</div>
+
+		<div class="row">
+		    {% for car in allcars%}
+        	{% if forloop.counter < 7 %}
+			<div class="col-md-4 col-sm-6">
+				<div class="featured-listing-wrap">
+					<div class="listing-image">
+						<a href="/listing-detail.html/{{car.id}}/"><img src="{{car.car_photo.url}}"width="1000"height="400" alt="image"></a>
+						
+						
+					</div>
+					<h4><a href="/listing-detail.html/{{car.id}}/">{{car.car_title|title}}</a></h4>
+					<p class="listing-price">{{car.car_title|title}}</p>
+					<div class="listing-meta">
+						<ul>
+							<li>{{car.fuel_type|title}}</li>					
+							<li>{{car.transmission_type|title}}</li>
+							<li>{{car.car_city |title}}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+        	{% endfor %}
+			
+		</div>
+	</div>
+</section>
+<!-- /Featured-LIsting -->
+
+<section class="section-padding">
+	<div class="container">
+		<div class="buy-sell-car">
+			<div class="act-car-img"><img src="{% static 'assets/images/car-img-03.png' %}" alt="image"></a></div>
+			<div class="new-car act-car">
+				<h4>Vous cherchez à acheter une </h4>
+<h2><a href="/listing-classic.html" style="color: white">voiture d'occasion ?</a></h2>
+<p>Commencez à chercher dans notre inventaire qui comprend plus de 2000 voitures</p>
+</div>
+<div class="old-car act-car">
+<h4>Vous cherchez à vendre une </h4>
+<h2><a href="/listing-classic.html" style="color: white">voiture ancienne ?</a></h2>
+<p>Ajoutez votre véhicule à l'inventaire et atteignez 3000 acheteurs potentiels</p>
+</div>
+
+		</div>
+	</div>
+</section>
+
+
+
+{% block scripts %}
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+$( document ).ready(function() {
+    $('#price_range').change(function(){
+        $('#message').html('DHS '+$('#price_range').val());
+    });
+});
+</script>
+
+
+
+{% endblock %}
+
+{% endblock %}
+
