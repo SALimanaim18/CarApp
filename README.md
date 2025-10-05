@@ -35,13 +35,13 @@ By combining an **intuitive interface**, **robust functionality**, and **securit
 
 ## ⚙️ Architecture & Technologies
 
-| Layer              | Technology / Tool                     |
-|--------------------|---------------------------------------|
-| Framework          | Django (Python)                       |
-| Database           | MySQL / MariaDB (or SQLite)           |
-| Frontend           | HTML, CSS, JavaScript (Django templates) |
-| Virtual Environment | Python venv                           |
-| Image Handling     | Pillow                                |
+| Layer               | Technology / Tool                          |
+|--------------------|--------------------------------------------|
+| Framework           | Django (Python)                            |
+| Database            | MySQL / MariaDB (or SQLite)                |
+| Frontend            | HTML, CSS, JavaScript (Django templates)  |
+| Virtual Environment | Python venv                                |
+| Image Handling      | Pillow                                     |
 
 ---
 
@@ -53,17 +53,16 @@ By combining an **intuitive interface**, **robust functionality**, and **securit
 - MySQL / MariaDB (or use SQLite for simplicity)  
 - phpMyAdmin (for managing the database easily)
 
----
-
 ### Steps
 
 ```bash
 # 1️⃣ Create and activate virtual environment
 virtualenv venv
 venv\Scripts\activate
-```
+
 # 2️⃣ Import the database
-# Open phpMyAdmin, create a new database, import the SQL file ( in /database/ folder)
+# Open phpMyAdmin, create a new database
+# Import the provided SQL file (usually in /database/ folder)
 # Verify database settings in settings.py (name, user, password, host)
 
 # 3️⃣ Install dependencies
@@ -81,4 +80,3 @@ python manage.py migrate
 
 # 6️⃣ Run the development server
 python manage.py runserver
-
